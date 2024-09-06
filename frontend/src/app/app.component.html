@@ -1,0 +1,32 @@
+<title>{{title}}</title>
+
+<div *ngIf="showSidebarAndNavbar ; else noSidebar">
+  <div class="container-xxl position-relative bg-white d-flex p-0">
+    
+    <!-- Sidebar -->
+    <!-- <aside *ngIf="showSidebarAndNavbar"> -->
+      <!-- Contenu du sidebar ici -->
+      <app-sidebar></app-sidebar>
+    <!-- </aside> -->
+
+    <!-- Content Start -->
+    <div class="content">
+      <!-- <nav *ngIf="showSidebarAndNavbar"> -->
+        <!-- Contenu du navbar ici -->
+        <app-navbar></app-navbar>
+      <!-- </nav> -->
+       <router-outlet></router-outlet>
+        <!-- </div> -->
+        <!-- <footer *ngIf="showSidebarAndNavbar"> -->
+          <!-- Contenu du footer ici -->
+          <app-footer></app-footer>
+        <!-- </footer> -->
+    </div>
+    <!-- Content End -->
+  </div>
+</div>
+<!-- ng-template for when the sidebar is not displayed -->
+<ng-template #noSidebar>
+  <!-- Contenu à afficher lorsque le sidebar est masqué -->
+  <router-outlet></router-outlet>
+</ng-template>
